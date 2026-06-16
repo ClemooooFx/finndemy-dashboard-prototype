@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learner Dashboard — Finndemy (Prototype)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-logo">
+        <img src="assets/Finndemy-white-logo.png" alt="Finndemy">
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-section-label">Learning</div>
+        <a href="#" class="nav-link active">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+          Dashboard
+        </a>
+        <a href="#" class="nav-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+          My Courses
+          <span class="nav-badge">11</span>
+        </a>
+        <a href="#" class="nav-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
+          Certificates
+          <span class="nav-badge">1</span>
+        </a>
+
+        <div class="nav-section-label">Community</div>
+        <a href="#" class="nav-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          Messages
+        </a>
+        <a href="#" class="nav-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+          Notifications
+        </a>
+        <a href="#" class="nav-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          My Progress
+        </a>
+
+        <div class="nav-section-label">Account</div>
+        <a href="#" class="nav-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          Edit Profile
+        </a>
+        <a href="#" class="nav-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          Settings
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="invite-card">
+          <p>Know someone who'd benefit? Share Finndemy and help them level up.</p>
+          <button class="btn btn-primary btn-sm">Invite a Friend</button>
+        </div>
+      </div>
+    </aside>
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- Main -->
+    <div class="main">
+      <header class="topbar">
+        <button class="icon-btn menu-toggle" id="menuToggle" aria-label="Open menu">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+
+        <div class="search-bar">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input type="search" id="searchInput" placeholder="Search your courses…" aria-label="Search courses">
+        </div>
+
+        <div class="topbar-actions">
+          <button class="icon-btn" aria-label="Notifications">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+            <span class="dot"></span>
+          </button>
+          <button class="icon-btn" aria-label="Messages">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </button>
+          <a href="#" class="user-menu">
+            <img src="assets/avatar.jpg" alt="Clem Clem">
+            <span>Clem Clem</span>
+          </a>
+        </div>
+      </header>
+
+      <main class="content">
+        <!-- Welcome -->
+        <section class="welcome">
+          <div class="welcome-text">
+            <h1>Welcome back, Clem 👋</h1>
+            <p>You've completed 1 of 11 courses. Pick up where you left off or explore something new today.</p>
+          </div>
+          <div class="welcome-cta">
+            <button class="btn btn-primary">Continue Learning</button>
+          </div>
+        </section>
+
+        <!-- Quick actions (mobile) -->
+        <div class="quick-actions">
+          <a href="#" class="quick-action"><span class="emoji">📩</span>Messages</a>
+          <a href="#" class="quick-action"><span class="emoji">🔔</span>Alerts</a>
+          <a href="#" class="quick-action"><span class="emoji">📈</span>Progress</a>
+          <a href="#" class="quick-action"><span class="emoji">👥</span>Invite</a>
+        </div>
+
+        <!-- Stats -->
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-icon green">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+            </div>
+            <div>
+              <div class="stat-value">11</div>
+              <div class="stat-label">Enrolled Courses</div>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon navy">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </div>
+            <div>
+              <div class="stat-value">1</div>
+              <div class="stat-label">Completed</div>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon amber">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
+            </div>
+            <div>
+              <div class="stat-value">1</div>
+              <div class="stat-label">Certificate Earned</div>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon blue">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <div>
+              <div class="stat-value">0</div>
+              <div class="stat-label">Points</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Continue learning -->
+        <div class="section-header">
+          <h2>Continue Learning</h2>
+        </div>
+        <div class="continue-strip">
+          <article class="continue-card">
+            <div class="thumb">
+              <img src="assets/course-investments.jpeg" alt="">
+            </div>
+            <div class="body">
+              <h3>Mastering Investment Principles</h3>
+              <div class="progress-bar"><div class="progress-fill" style="width: 0%"></div></div>
+              <div class="progress-meta"><span>0 of 6 lessons</span><strong>0%</strong></div>
+            </div>
+          </article>
+          <article class="continue-card">
+            <div class="thumb" style="background: linear-gradient(135deg, #0f3758, #1eba15);"></div>
+            <div class="body">
+              <h3>Understanding Investment Policy Statements</h3>
+              <div class="progress-bar"><div class="progress-fill" style="width: 0%"></div></div>
+              <div class="progress-meta"><span>0 of 8 lessons</span><strong>0%</strong></div>
+            </div>
+          </article>
+          <article class="continue-card">
+            <div class="thumb" style="background: linear-gradient(135deg, #021e40, #0f3758);"></div>
+            <div class="body">
+              <h3>Personal Financial Planning and Wealth Management</h3>
+              <div class="progress-bar"><div class="progress-fill" style="width: 0%"></div></div>
+              <div class="progress-meta"><span>Not started</span><strong>0%</strong></div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Main grid -->
+        <div class="dashboard-grid">
+          <div class="courses-column">
+            <div class="courses-filters">
+              <div class="section-header">
+                <h2>Your Courses</h2>
+                <div class="filter-tabs status-filters" role="tablist" aria-label="Filter by status">
+                  <button class="filter-tab active" data-filter="all" role="tab">All</button>
+                  <button class="filter-tab" data-filter="in-progress" role="tab">In Progress</button>
+                  <button class="filter-tab" data-filter="complete" role="tab">Completed</button>
+                  <button class="filter-tab" data-filter="not-started" role="tab">Not Started</button>
+                </div>
+              </div>
+
+              <div class="path-filters-row">
+                <span class="path-filters-label">Learning Path</span>
+                <div class="filter-tabs path-filters" role="tablist" aria-label="Filter by learning path">
+                  <button class="filter-tab path-tab active" data-path="all" role="tab">All</button>
+                  <button class="filter-tab path-tab" data-path="retirement-planning" role="tab">Retirement Planning</button>
+                  <button class="filter-tab path-tab" data-path="pension-trustees" role="tab">Pension Trustees &amp; Board Members</button>
+                  <button class="filter-tab path-tab" data-path="pension-professionals" role="tab">Pension Professionals</button>
+                  <button class="filter-tab path-tab" data-path="personal-finance" role="tab">Personal Finance</button>
+                  <button class="filter-tab path-tab" data-path="career-development" role="tab">Career Development</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="course-list" id="courseList">
+              <!-- Courses injected from data -->
+            </div>
+            <div class="empty-state hidden" id="emptyState">No courses match your search or filter.</div>
+          </div>
+
+          <aside class="sidebar-panel">
+            <div class="panel">
+              <div class="panel-header"><h3>Suggested for You</h3></div>
+              <div class="panel-body">
+                <article class="suggested-card">
+                  <div class="thumb">
+                    <img src="assets/course-investments.jpeg" alt="Mastering Investment Principles">
+                    <span class="ribbon">Enrolled</span>
+                  </div>
+                  <div class="caption">
+                    <h4>Mastering Investment Principles</h4>
+                    <button class="btn btn-primary btn-sm" style="width:100%">Continue Study</button>
+                  </div>
+                </article>
+                <article class="suggested-card">
+                  <div class="thumb">
+                    <img src="assets/course-service-provider.jpeg" alt="Service Provider Management">
+                    <span class="ribbon price">KES 3,000</span>
+                  </div>
+                  <div class="caption">
+                    <h4>Service Provider Management for Pension Funds</h4>
+                    <button class="btn btn-primary btn-sm" style="width:100%">Enroll Now</button>
+                  </div>
+                </article>
+              </div>
+            </div>
+
+            <div class="panel">
+              <div class="panel-header"><h3>Recent Achievements</h3></div>
+              <div class="panel-body">
+                <div class="achievement">
+                  <div class="achievement-icon">🏆</div>
+                  <div class="achievement-text">
+                    <strong>Course Completed</strong>
+                    <span>Estate Planning: Wills, Trusts and Asset Protection</span>
+                  </div>
+                </div>
+                <div class="achievement">
+                  <div class="achievement-icon">📜</div>
+                  <div class="achievement-text">
+                    <strong>Certificate Earned</strong>
+                    <span>Estate Planning certificate available</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script>
+    const paths = {
+      'retirement-planning': 'Retirement Planning',
+      'pension-trustees': 'Pension Trustees & Board Members',
+      'pension-professionals': 'Pension Professionals',
+      'personal-finance': 'Personal Finance',
+      'career-development': 'Career Development',
+    };
+
+    const courses = [
+      { title: 'Re-Engineering Long Term Health Planning: The Post-Retirement Medical Cover', progress: 0, steps: '0/0', status: 'not-started', path: 'retirement-planning' },
+      { title: 'Mastering Investment Principles', progress: 0, steps: '0/6', status: 'not-started', path: 'pension-professionals' },
+      { title: 'Understanding Investment Policy Statements', progress: 0, steps: '0/8', status: 'not-started', path: 'pension-professionals' },
+      { title: 'Estate Planning: Wills, Trusts and Asset Protection', progress: 100, steps: '3/3', status: 'complete', certificate: true, path: 'personal-finance' },
+      { title: 'Personal Financial Planning and Wealth Management', progress: 0, steps: '0/0', status: 'not-started', path: 'personal-finance' },
+      { title: 'Board Oversight and Effective Governance for Pension Schemes', progress: 0, steps: '0/0', status: 'not-started', path: 'pension-trustees' },
+      { title: 'Modern Career Success Beyond Hard Work and Loyalty', progress: 0, steps: '0/0', status: 'not-started', path: 'career-development' },
+      { title: 'Psychology of Money and Financial Behavior', progress: 0, steps: '0/0', status: 'not-started', path: 'personal-finance' },
+      { title: 'Effective Board Meetings for Pension Trustees', progress: 0, steps: '0/0', status: 'not-started', path: 'pension-trustees' },
+      { title: 'Effective Trusteeship in Pension Schemes', progress: 0, steps: '0/0', status: 'not-started', path: 'pension-trustees' },
+      { title: 'Effective Ethical Leadership and Conflict Resolution', progress: 0, steps: '0/0', status: 'not-started', path: 'career-development' },
+    ];
+
+    const statusLabels = {
+      'complete': 'Complete',
+      'in-progress': 'In Progress',
+      'not-started': 'Not Started',
+    };
+
+    let activeStatusFilter = 'all';
+    let activePathFilter = 'all';
+    let searchQuery = '';
+
+    function renderCourses() {
+      const list = document.getElementById('courseList');
+      const empty = document.getElementById('emptyState');
+      const filtered = courses.filter(c => {
+        const matchesStatus = activeStatusFilter === 'all' || c.status === activeStatusFilter;
+        const matchesPath = activePathFilter === 'all' || c.path === activePathFilter;
+        const matchesSearch = !searchQuery || c.title.toLowerCase().includes(searchQuery);
+        return matchesStatus && matchesPath && matchesSearch;
+      });
+
+      list.innerHTML = filtered.map(c => `
+        <article class="course-row" data-status="${c.status}" data-path="${c.path}">
+          <span class="status-dot ${c.status === 'complete' ? 'complete' : c.status === 'in-progress' ? 'in-progress' : 'not-started'}"></span>
+          <div class="course-info">
+            <div class="course-title-row">
+              <h3>${c.title}</h3>
+              <span class="path-badge">${paths[c.path]}</span>
+            </div>
+            <div class="progress-bar"><div class="progress-fill" style="width: ${c.progress}%"></div></div>
+            <div class="progress-meta"><span>${c.steps} steps</span><strong>${c.progress}%</strong></div>
+          </div>
+          <div class="course-actions">
+            <span class="badge ${c.status}">${statusLabels[c.status]}</span>
+            ${c.certificate ? '<button class="btn-icon" title="View certificate" aria-label="View certificate"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg></button>' : ''}
+            <button class="btn btn-ghost">${c.status === 'complete' ? 'Review' : c.progress > 0 ? 'Continue' : 'Start'}</button>
+          </div>
+        </article>
+      `).join('');
+
+      empty.classList.toggle('hidden', filtered.length > 0);
+    }
+
+    function bindFilterTabs(containerSelector, activeClass, onSelect) {
+      document.querySelectorAll(`${containerSelector} .filter-tab`).forEach(tab => {
+        tab.addEventListener('click', () => {
+          document.querySelectorAll(`${containerSelector} .filter-tab`).forEach(t => t.classList.remove('active'));
+          tab.classList.add('active');
+          onSelect(tab);
+          renderCourses();
+        });
+      });
+    }
+
+    bindFilterTabs('.status-filters', 'active', tab => {
+      activeStatusFilter = tab.dataset.filter;
+    });
+
+    bindFilterTabs('.path-filters', 'active', tab => {
+      activePathFilter = tab.dataset.path;
+    });
+
+    document.getElementById('searchInput').addEventListener('input', (e) => {
+      searchQuery = e.target.value.toLowerCase().trim();
+      renderCourses();
+    });
+
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('sidebarOverlay');
+    const menuToggle = document.getElementById('menuToggle');
+    const MOBILE_BREAKPOINT = 900;
+
+    function isMobile() {
+      return window.innerWidth <= MOBILE_BREAKPOINT;
+    }
+
+    function isSidebarOpen() {
+      return isMobile()
+        ? sidebar.classList.contains('open')
+        : !document.body.classList.contains('sidebar-collapsed');
+    }
+
+    function updateMenuAria() {
+      menuToggle.setAttribute('aria-label', isSidebarOpen() ? 'Close menu' : 'Open menu');
+      menuToggle.setAttribute('aria-expanded', String(isSidebarOpen()));
+    }
+
+    function closeSidebar() {
+      if (isMobile()) {
+        sidebar.classList.remove('open');
+        overlay.classList.remove('visible');
+      } else {
+        document.body.classList.add('sidebar-collapsed');
+      }
+      updateMenuAria();
+    }
+
+    function openSidebar() {
+      if (isMobile()) {
+        sidebar.classList.add('open');
+        overlay.classList.add('visible');
+      } else {
+        document.body.classList.remove('sidebar-collapsed');
+      }
+      updateMenuAria();
+    }
+
+    menuToggle.addEventListener('click', () => {
+      if (isSidebarOpen()) {
+        closeSidebar();
+      } else {
+        openSidebar();
+      }
+    });
+
+    overlay.addEventListener('click', closeSidebar);
+
+    window.addEventListener('resize', () => {
+      if (isMobile()) {
+        document.body.classList.remove('sidebar-collapsed');
+      } else {
+        sidebar.classList.remove('open');
+        overlay.classList.remove('visible');
+      }
+      updateMenuAria();
+    });
+
+    updateMenuAria();
+
+    renderCourses();
+  </script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+{
+  "name": "finndemy-dashboard-prototype",
+  "private": true,
+  "scripts": {
+    "start": "npx --yes serve . -p 3456",
+    "open": "start http://localhost:3456"
+  }
+}
