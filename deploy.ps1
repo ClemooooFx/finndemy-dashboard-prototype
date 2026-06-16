@@ -21,7 +21,8 @@ $repoName = "finndemy-dashboard-prototype"
 $owner = (& $gh api user -q .login).Trim()
 Write-Host "GitHub user: $owner"
 
-if (-not (git remote get-url origin 2>$null)) {
+$hasOrigin = (& git remote) -contains "origin"
+if (-not $hasOrigin) {
     Write-Host "Creating public repo and pushing..."
     & $gh repo create $repoName --public --source=. --remote=origin --push --description "Finndemy learner dashboard UI prototype"
 } else {
@@ -32,7 +33,7 @@ if (-not (git remote get-url origin 2>$null)) {
 Write-Host "Enabling GitHub Pages..."
 & $gh api "repos/$owner/$repoName/pages" -X POST -f "build_type=legacy" -f "source[branch]=main" -f "source[path]=/" 2>$null
 if ($LASTEXITCODE -ne 0) {
-    Write-Host "Pages may already be enabled — checking status..."
+    Write-Host "Pages may already be enabled - checking status..."
     & $gh api "repos/$owner/$repoName/pages"
 }
 

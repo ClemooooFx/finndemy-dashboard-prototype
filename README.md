@@ -2,7 +2,7 @@
 
 A standalone redesign of the Finndemy learner dashboard.
 
-**Live demo:** after deploy → `https://<your-github-username>.github.io/finndemy-dashboard-prototype/`
+**Live demo:** https://clemoooofx.github.io/finndemy-dashboard-prototype/
 
 ## View locally
 
