@@ -2,7 +2,7 @@
 
 A standalone redesign of the Finndemy learner dashboard.
 
-**Live demo:** https://clementkirima.github.io/finndemy-dashboard-prototype/
+**Live demo:** after deploy → `https://<your-github-username>.github.io/finndemy-dashboard-prototype/`
 
 ## View locally
 
@@ -39,4 +39,17 @@ Uses Finndemy colors from the live site: green `#1eba15`, navy `#0f3758`, dark `
 - `styles.css` — all styling
 - `assets/` — logo, avatar, course thumbnails
 
-Interactive: search courses, filter by status (All / In Progress / Completed / Not Started), responsive mobile sidebar.
+Interactive: search courses, filter by status (All / In Progress / Completed / Not Started), filter by learning path, responsive mobile sidebar.
+
+## Deploy to GitHub Pages
+
+1. Log in to GitHub (one time):
+   ```powershell
+   gh auth login
+   ```
+2. From this folder, run:
+   ```powershell
+   .\deploy.ps1
+   ```
+
+This creates the public repo, pushes the code, and enables GitHub Pages. Your demo URL will be printed when it finishes.
